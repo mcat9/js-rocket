@@ -1,5 +1,9 @@
+body {
+  font-family: 'helvetica', 'arial', sans-serif;
+}
+
 .left {
-background-color: turquoise;
+background-color: #101836;
 position: fixed;
 width: 50%;
 height: 100%;
@@ -7,8 +11,26 @@ top: 0;
 left: 0;
 }
 
+.interface {
+  text-align: center;
+  padding: 20px;
+}
+
+a.button {
+  display: inline-block;
+  background-color:white;
+  color:black;
+  padding:20px 40px;
+  text-decoration: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  transition: color 300ms;
+}
+a.hover {
+  background-color: red;
+}
 .right {
-  background-color: aliceblue;
+  background: url('../js-rocket/img/bg.png') repeat 0 0;
   position: fixed;
   width: 50%;
   height: 100%;
@@ -16,28 +38,6 @@ left: 0;
   right: 0;
 }
 
-a.button {
-
-}
-
-.rocket {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  width:20px;
-  height: 100px;
-  background-color: blue;
-  transition: bottom 10000ms;
-}
-
-body.body-state1 .rocket {
-  transition: none;
-}
-
-body.body-state3 .rocket
-body.body-state4 .rocket{
-  bottom: 1000px;
-}
 .ground {
   background-color: green;
   position: absolute;
@@ -45,6 +45,67 @@ body.body-state4 .rocket{
   left: 0;
   width: 100%;
   height:20px;
+}
+.nervous {
+  position:absolute;
+  bottom:240px;
+  left:80px;
+  background: url('../js-rocket/img/nervous.png') no-repeat 0 0;
+  width:178px;
+  height: 98px;
+  display:none;
+}
+.nervous.show {
+  display:block;
+}
+.cant-wait {
+  position:absolute;
+  bottom:248px;
+  left:350px;
+  background: url('../js-rocket/img/cant-wait.png') no-repeat 0 0;
+  width:178px;
+  height: 47px;
+  display:none;
+}
+.cant-wait.show {
+  display:block;
+}
+
+.rocket {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  width:196px;
+  height: 292px;
+  margin-left: -98px;
+  background: url('../js-rocket/img/rocket-still.png') no-repeat 0 0;
+  transition: bottom 10000ms;
+}
+
+
+/* rocket bg image */
+body.body-state2 .rocket {
+  background-image: url('../js-rocket/img/rocket-1.gif');
+}
+body.body-state3 .rocket,
+body.body-state4 .rocket {
+background-image: url('../js-rocket/img/rocket-2.gif');
+}
+body.body-state5 .rocket{
+background-image: url('../js-rocket/img/boom-state.gif');
+width:310px;
+height:131px;
+bottom:350px;
+margin-left:-100px;
+}
+
+body.body-state1 .rocket {
+  transition: none;
+}
+
+body.body-state3 .rocket,
+body.body-state4 .rocket {
+bottom: 1000px;
 }
 
 .state1,
@@ -60,3 +121,7 @@ body.body-state2 .state2{display: block;}
 body.body-state3 .state3{display: block;}
 body.body-state4 .state4{display: block;}
 body.body-state5 .state5{display: block;}
+
+h1 {
+  color:#fff;
+}
